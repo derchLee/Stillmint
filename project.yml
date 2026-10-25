@@ -1,0 +1,124 @@
+name: ClearKeep
+options:
+  deploymentTarget: { iOS: "17.0" }
+targets:
+  ClearKeep:
+    type: application
+    platform: iOS
+    sources:
+      - path: ClearKeep
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(CK_BUNDLE_ID)
+        MARKETING_VERSION: $(CK_MARKETING_VERSION)
+        CURRENT_PROJECT_VERSION: $(CK_BUILD_NUMBER)
+        SWIFT_VERSION: 6.0
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: ClearKeep/Supporting/Info.plist
+        CK_BUNDLE_ID: com.example.clearkeep.replace-before-release
+        CK_MARKETING_VERSION: 1.0
+        CK_BUILD_NUMBER: 1
+        CK_LIFETIME_PRODUCT_ID: com.clearkeep.lifetime
+        CK_PRIVACY_POLICY_URL: https://YOUR-DOMAIN.example/privacy
+        CK_TERMS_URL: https://YOUR-DOMAIN.example/terms
+        CK_SUPPORT_URL: ""
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        TARGETED_DEVICE_FAMILY: 1
+        SUPPORTED_PLATFORMS: iphoneos iphonesimulator
+        SWIFT_STRICT_CONCURRENCY: complete
+        SWIFT_EMIT_LOC_STRINGS: YES
+      configs:
+        Debug:
+          ENABLE_TESTABILITY: YES
+          CODE_SIGNING_ALLOWED: NO
+        Release:
+          CODE_SIGN_STYLE: Automatic
+  ClearKeepTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [ClearKeepTests]
+    dependencies: [{target: ClearKeep}]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.clearkeep.prototype.tests
+        CODE_SIGNING_ALLOWED: NO
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: 6.0
+        SWIFT_STRICT_CONCURRENCY: complete
+  ClearKeepUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [ClearKeepUITests]
+    dependencies: [{target: ClearKeep}]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.clearkeep.uitests
+        CODE_SIGNING_ALLOWED: NO
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: 6.0
+        TEST_TARGET_NAME: ClearKeep
+  ClearKeepStoreKitHost:
+    type: application
+    platform: iOS
+    sources:
+      - path: ClearKeep
+        excludes: [App/ClearKeepApp.swift]
+      - path: StoreKitTestHost
+      - path: ClearKeep.storekit
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.clearkeep.storekit-testhost
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: 6.0
+        SWIFT_STRICT_CONCURRENCY: complete
+        ENABLE_TESTABILITY: YES
+        CODE_SIGNING_ALLOWED: YES
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGN_ENTITLEMENTS: StoreKitTestHost/StoreKitTestHost.entitlements
+        TARGETED_DEVICE_FAMILY: 1
+  ClearKeepStoreKitTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [ClearKeepStoreKitTests]
+    dependencies:
+      - target: ClearKeepStoreKitHost
+      - sdk: StoreKitTest.framework
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.clearkeep.storekit-tests
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGNING_ALLOWED: YES
+        CODE_SIGN_IDENTITY: "-"
+        SWIFT_VERSION: 6.0
+        SWIFT_STRICT_CONCURRENCY: complete
+schemes:
+  ClearKeep:
+    build:
+      targets:
+        ClearKeep: all
+    test:
+      targets: [ClearKeepTests]
+  ClearKeepE2E:
+    build:
+      targets:
+        ClearKeep: all
+        ClearKeepUITests: [test]
+    test:
+      targets: [ClearKeepUITests]
+      testPlans:
+        - path: ClearKeepE2E.xctestplan
+          defaultPlan: true
+  ClearKeepStoreKit:
+    run:
+      storeKitConfiguration: ClearKeep.storekit
+    build:
+      targets:
+        ClearKeepStoreKitHost: all
+    test:
+      targets:
+        - name: ClearKeepStoreKitTests
+          parallelizable: false
+      testPlans:
+        - path: ClearKeepStoreKit.xctestplan
+          defaultPlan: true

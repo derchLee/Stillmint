@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>CFBundleExecutable</key><string>$(EXECUTABLE_NAME)</string>
+<key>CFBundleIdentifier</key><string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+<key>CFBundleInfoDictionaryVersion</key><string>6.0</string>
+<key>CFBundleName</key><string>$(PRODUCT_NAME)</string>
+<key>CFBundlePackageType</key><string>APPL</string>
+<key>CFBundleShortVersionString</key><string>$(MARKETING_VERSION)</string>
+<key>CFBundleVersion</key><string>$(CURRENT_PROJECT_VERSION)</string>
+<key>CFBundleDisplayName</key><string>Stillmint</string>
+<key>CKLifetimeProductID</key><string>$(CK_LIFETIME_PRODUCT_ID)</string>
+<key>CKPrivacyPolicyURL</key><string>$(CK_PRIVACY_POLICY_URL)</string>
+<key>CKTermsOfUseURL</key><string>$(CK_TERMS_URL)</string>
+<key>CKSupportURL</key><string>$(CK_SUPPORT_URL)</string>
+<key>NSPhotoLibraryUsageDescription</key><string>Stillmint reviews the photos you choose so you can decide what to remove.</string>
+<key>NSPhotoLibraryAddUsageDescription</key><string>Stillmint saves compressed video copies to Photos, keeps your originals, and asks before deleting only the items you confirm.</string>
+<key>UILaunchScreen</key><dict/>
+<key>UISupportedInterfaceOrientations</key><array><string>UIInterfaceOrientationPortrait</string></array>
+</dict></plist>

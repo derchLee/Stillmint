@@ -1,0 +1,18 @@
+{
+  "identifier" : "1D37A339-D88E-41A4-88B2-909C9CF24A6A",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "19.99",
+      "familyShareable" : false,
+      "internalID" : "BC4535D4-D4FA-4CD2-B42E-CBD8C399A90F",
+      "localizations" : [{"description":"Unlock unlimited photo and video cleanups forever with one purchase.","displayName":"Lifetime Unlock","locale":"en_US"}],
+      "productID" : "com.clearkeep.lifetime",
+      "referenceName" : "Stillmint Lifetime Unlock",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {"_failTransactionsEnabled":false,"_locale":"en_US","_storefront":"USA"},
+  "subscriptionGroups" : [],
+  "version" : {"major":3,"minor":0}
+}

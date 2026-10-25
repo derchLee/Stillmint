@@ -1,0 +1,6 @@
+{
+  "configurations": [{"id": "D32921D8-F659-4A73-B790-BAAE176541C1", "name": "E2E", "options": {}}],
+  "defaultOptions": {"targetForVariableExpansion": {"containerPath": "container:ClearKeep.xcodeproj", "identifier": "7CE7F02F823719DEC14E3E77", "name": "ClearKeep"}},
+  "testTargets": [{"target": {"containerPath": "container:ClearKeep.xcodeproj", "identifier": "48410B4D8BA68B3C11E925BC", "name": "ClearKeepUITests"}, "parallelizable": false}],
+  "version": 1
+}

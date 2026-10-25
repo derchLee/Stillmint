@@ -1,0 +1,6 @@
+{
+  "configurations": [{"id": "843FE273-6EF4-4D69-B706-1A638FBCA018", "name": "Local StoreKit", "options": {}}],
+  "defaultOptions": {},
+  "testTargets": [{"target": {"containerPath": "container:ClearKeep.xcodeproj", "identifier": "64F4AFC684E272855132553B", "name": "ClearKeepStoreKitTests"}, "parallelizable": false}],
+  "version": 1
+}

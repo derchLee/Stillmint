@@ -1,0 +1,43 @@
+# Xcode / Swift build output and per-user state
+build/
+DerivedData/
+.build/
+__pycache__/
+*.py[cod]
+*.xcarchive/
+*.xcresult/
+*.dSYM/
+*.ipa
+*.app/
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+.DS_Store
+
+# Credentials, signing material, and local-only configuration
+.env
+.env.*
+*.p8
+*.p12
+*.pfx
+*.pem
+*.key
+*.cer
+*.mobileprovision
+*.provisionprofile
+
+# Runtime media/data and machine-specific evidence are not source fixtures
+*.log
+*.heic
+*.heif
+*.mov
+*.mp4
+operations.json
+clearkeep-deletion-journal-v1.json
+deletion-journal.json
+ClearKeep-E2E/
+CompressionOperations/
+ClearKeepCompression/
+prototypes/
+ClearKeep 2.xcodeproj/
